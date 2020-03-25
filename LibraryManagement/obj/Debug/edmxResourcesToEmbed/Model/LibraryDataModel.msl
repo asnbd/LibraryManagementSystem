@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="libraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+    <EntitySetMapping Name="books_info">
+      <EntityTypeMapping TypeName="libraryModel.books_info">
+        <MappingFragment StoreEntitySet="books_info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_author" ColumnName="book_author" />
+          <ScalarProperty Name="book_publisher" ColumnName="book_publisher" />
+          <ScalarProperty Name="book_purchase_date" ColumnName="book_purchase_date" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
+          <ScalarProperty Name="book_quantity" ColumnName="book_quantity" />
+          <ScalarProperty Name="book_department" ColumnName="book_department" />
+          <ScalarProperty Name="available_quantity" ColumnName="available_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="issue_book">
+      <EntityTypeMapping TypeName="libraryModel.issue_book">
+        <MappingFragment StoreEntitySet="issue_book">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_issue_date" ColumnName="book_issue_date" />
+          <ScalarProperty Name="book_return_date" ColumnName="book_return_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="library_admin">
+      <EntityTypeMapping TypeName="libraryModel.library_admin">
+        <MappingFragment StoreEntitySet="library_admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_info">
+      <EntityTypeMapping TypeName="libraryModel.student_info">
+        <MappingFragment StoreEntitySet="student_info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="student_name" ColumnName="student_name" />
+          <ScalarProperty Name="student_email" ColumnName="student_email" />
+          <ScalarProperty Name="student_contact" ColumnName="student_contact" />
+          <ScalarProperty Name="student_department" ColumnName="student_department" />
+          <ScalarProperty Name="student_batch" ColumnName="student_batch" />
+          <ScalarProperty Name="student_image" ColumnName="student_image" />
+          <ScalarProperty Name="student_registration_date" ColumnName="student_registration_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

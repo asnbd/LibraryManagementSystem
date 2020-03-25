@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="books_info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="book_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="book_author" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="book_publisher" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="book_purchase_date" Type="DateTime" Precision="0" />
+    <Property Name="book_price" Type="Int32" />
+    <Property Name="book_quantity" Type="Int32" />
+    <Property Name="book_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="available_quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="issue_book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="book_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="book_issue_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="book_return_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="library_admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="student_info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="student_registration_date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="books_info" EntityType="Self.books_info" />
+    <EntitySet Name="issue_book" EntityType="Self.issue_book" />
+    <EntitySet Name="library_admin" EntityType="Self.library_admin" />
+    <EntitySet Name="student_info" EntityType="Self.student_info" />
+  </EntityContainer>
+</Schema>
