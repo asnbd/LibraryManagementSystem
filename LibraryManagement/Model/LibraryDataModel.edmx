@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="libraryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="books_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="book_name" Type="varchar" MaxLength="255" />
+          <Property Name="book_author" Type="varchar" MaxLength="255" />
+          <Property Name="book_publisher" Type="varchar" MaxLength="255" />
+          <Property Name="book_purchase_date" Type="date" />
+          <Property Name="book_price" Type="int" />
+          <Property Name="book_quantity" Type="int" />
+          <Property Name="book_department" Type="varchar" MaxLength="50" />
+          <Property Name="available_quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="issue_book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_id" Type="varchar" MaxLength="50" />
+          <Property Name="book_name" Type="varchar" MaxLength="255" />
+          <Property Name="book_issue_date" Type="varchar" MaxLength="50" />
+          <Property Name="book_return_date" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="library_admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="student_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="student_name" Type="varchar" MaxLength="50" />
+          <Property Name="student_email" Type="varchar" MaxLength="50" />
+          <Property Name="student_contact" Type="varchar" MaxLength="50" />
+          <Property Name="student_department" Type="varchar" MaxLength="50" />
+          <Property Name="student_batch" Type="varchar" MaxLength="50" />
+          <Property Name="student_image" Type="varchar" MaxLength="50" />
+          <Property Name="student_registration_date" Type="date" />
+        </EntityType>
+        <EntityContainer Name="libraryModelStoreContainer">
+          <EntitySet Name="books_info" EntityType="Self.books_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="issue_book" EntityType="Self.issue_book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="library_admin" EntityType="Self.library_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="student_info" EntityType="Self.student_info" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="books_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="book_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="book_author" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="book_publisher" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="book_purchase_date" Type="DateTime" Precision="0" />
+          <Property Name="book_price" Type="Int32" />
+          <Property Name="book_quantity" Type="Int32" />
+          <Property Name="book_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="available_quantity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="issue_book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="book_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="book_issue_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="book_return_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="library_admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="student_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_batch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_registration_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="LibraryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="books_info" EntityType="Self.books_info" />
+          <EntitySet Name="issue_book" EntityType="Self.issue_book" />
+          <EntitySet Name="library_admin" EntityType="Self.library_admin" />
+          <EntitySet Name="student_info" EntityType="Self.student_info" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="libraryModelStoreContainer" CdmEntityContainer="LibraryEntities">
+          <EntitySetMapping Name="books_info">
+            <EntityTypeMapping TypeName="libraryModel.books_info">
+              <MappingFragment StoreEntitySet="books_info">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_author" ColumnName="book_author" />
+                <ScalarProperty Name="book_publisher" ColumnName="book_publisher" />
+                <ScalarProperty Name="book_purchase_date" ColumnName="book_purchase_date" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
+                <ScalarProperty Name="book_quantity" ColumnName="book_quantity" />
+                <ScalarProperty Name="book_department" ColumnName="book_department" />
+                <ScalarProperty Name="available_quantity" ColumnName="available_quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="issue_book">
+            <EntityTypeMapping TypeName="libraryModel.issue_book">
+              <MappingFragment StoreEntitySet="issue_book">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_issue_date" ColumnName="book_issue_date" />
+                <ScalarProperty Name="book_return_date" ColumnName="book_return_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="library_admin">
+            <EntityTypeMapping TypeName="libraryModel.library_admin">
+              <MappingFragment StoreEntitySet="library_admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="student_info">
+            <EntityTypeMapping TypeName="libraryModel.student_info">
+              <MappingFragment StoreEntitySet="student_info">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_email" ColumnName="student_email" />
+                <ScalarProperty Name="student_contact" ColumnName="student_contact" />
+                <ScalarProperty Name="student_department" ColumnName="student_department" />
+                <ScalarProperty Name="student_batch" ColumnName="student_batch" />
+                <ScalarProperty Name="student_image" ColumnName="student_image" />
+                <ScalarProperty Name="student_registration_date" ColumnName="student_registration_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
